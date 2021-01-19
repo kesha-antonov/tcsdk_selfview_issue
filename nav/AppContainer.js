@@ -1,16 +1,20 @@
-import { createSwitchNavigator, createAppContainer } from 'react-navigation'
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+const Stack = createStackNavigator()
 
-const switchNavigation = createSwitchNavigator(
-  {
-    MainStack: {
-      getScreen: () => require('../TelemedBottomSheet/scene').default,
-      navigationOptions: {
-        headerShown: false,
-      },
-    },
-  }
-)
+function RootStack() {
+  return (
+    <Stack.Navigator
+      initialRouteName="Home"
+      screenOptions={{ gestureEnabled: false }}
+    >
+      <Stack.Screen
+        name="Home"
+        getComponent={() => require('../TelemedBottomSheet/scene').default}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  )
+}
 
-const AppContainer = createAppContainer(switchNavigation)
-
-export default AppContainer
+export default RootStack
