@@ -20,6 +20,8 @@
     "react-native-spinkit": "^1.5.1",
     "react-native-vector-icons": "^8.0.0",
     "react-native-screens": "^2.16.1",
+    "reanimated-bottom-sheet": "^1.0.0-alpha.22",
+    "react-native-reanimated": "^1.13.2",
     "react-native-trueconf-react-sdk": "kesha-antonov/react-native-trueconf-react-sdk#5cc9bee3b8533ee0a7c6c2235799d2dff009761d",
     "react-native-trueconf-sdk": "file:./TrueConfSDK"
   },

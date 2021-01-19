@@ -253,6 +253,8 @@ PODS:
     - React-jsi (= 0.63.4)
   - RNGestureHandler (1.9.0):
     - React-Core
+  - RNReanimated (1.13.2):
+    - React-Core
   - RNScreens (2.16.1):
     - React-Core
   - RNTrueConfSdk (1.0.7):
@@ -293,6 +295,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNTrueConfSdk (from `../node_modules/react-native-trueconf-sdk/ios/RNTrueConfSdk.podspec`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
@@ -361,6 +364,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNReanimated:
+    :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   RNTrueConfSdk:
@@ -401,6 +406,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
+  RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: 45c457af3d2ee9e08fc01e70da87e653d46b1198
   RNTrueConfSdk: a6e48b9fb2313835b01af0c4daceaa725edeac39
   RNVectorIcons: f67a1abce2ec73e62fe4606e8110e95a832bc859

@@ -14,6 +14,7 @@ import {
 } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import TelemedBottomSheet from './TelemedBottomSheet'
 
 import {
   Colors,
@@ -29,7 +30,9 @@ function App () {
       <View style={{flex: 1}}>
         {
           isCallActive ? (
-            <Video onHangup={() => setIsCallActive(false)} />
+            <TelemedBottomSheet
+              renderContent={() => (<Video onHangup={() => setIsCallActive(false)} />)}
+            />
           ) : (
             <View style={{flex: 1,justifyContent: 'center', alignItems: 'center'}}>
               <TouchableOpacity onPress={() => setIsCallActive(true)}>
