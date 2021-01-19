@@ -1,0 +1,51 @@
+diff --git a/node_modules/react-native-trueconf-sdk/android/build.gradle b/node_modules/react-native-trueconf-sdk/android/build.gradle
+index b132661..d2a24af 100644
+--- a/node_modules/react-native-trueconf-sdk/android/build.gradle
++++ b/node_modules/react-native-trueconf-sdk/android/build.gradle
+@@ -44,6 +44,6 @@ dependencies {
+     api 'de.greenrobot:eventbus:2.4.1'
+     implementation 'com.googlecode.libphonenumber:libphonenumber:7.4.5'
+     implementation 'com.facebook.react:react-native:+'
+-    implementation project(':TrueConfSDK')
++    // implementation project(':TrueConfSDK')
++    implementation files('TrueConfSDK.aar')
+ }
+-  
+\ No newline at end of file
+diff --git a/node_modules/react-native-trueconf-sdk/ios/RNTrueConfSdk.podspec b/node_modules/react-native-trueconf-sdk/ios/RNTrueConfSdk.podspec
+index 5c1f6b3..faeffda 100644
+--- a/node_modules/react-native-trueconf-sdk/ios/RNTrueConfSdk.podspec
++++ b/node_modules/react-native-trueconf-sdk/ios/RNTrueConfSdk.podspec
+@@ -1,25 +1,19 @@
+-
+ Pod::Spec.new do |s|
+   s.name         = "RNTrueConfSdk"
+-  s.version      = "1.0.0"
++  s.version      = "1.0.7"
+   s.summary      = "RNTrueConfSdk"
+   s.description  = <<-DESC
+                   RNTrueConfSdk
+                    DESC
+-  s.homepage     = ""
++  s.homepage     = "trueconf.ru"
+   s.license      = "MIT"
+-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+   s.author             = { "author" => "author@domain.cn" }
+-  s.platform     = :ios, "9.0"
+-  s.source       = { :git => "https://github.com/author/RNTrueConfSdk.git", :tag => "master" }
++  s.platform     = :ios, "11.0"
++  s.source            = { :http => 'file:' + __dir__ + '/RNTrueConfSdk.zip' }
+   s.source_files  = "*.{h,m}"
+   s.requires_arc = true
+ 
+-
+   s.dependency "React"
+-  s.vendored_frameworks = "TrueConfSDKNative/TrueConfSDK.framework"
+-  #s.dependency "others"
+-
++  s.framework = "TrueConfSDK"
++  s.vendored_frameworks = "TrueConfSDK.framework"
+ end
+-
+-  
+\ No newline at end of file

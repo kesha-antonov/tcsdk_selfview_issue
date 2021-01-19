@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -15,6 +15,8 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import {
   Header,
@@ -24,51 +26,33 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import Video from './Video'
+
 const App: () => React$Node = () => {
+  const [isCallActive, setIsCallActive] = useState(true)
+
+
+
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
+    <SafeAreaProvider>
+      <SafeAreaView style={{flex: 1}}>
+        {
+          isCallActive ? (
+            <Video onHangup={() => setIsCallActive(false)} />
+          ) : (
+            <View style={{flex: 1,justifyContent: 'center', alignItems: 'center'}}>
+              <TouchableOpacity onPress={() => setIsCallActive(true)}>
+                <View style={{padding: 20, backgroundColor: 'green', borderRadius: 10}}>
+                  <Text style={{color: 'white', fontSize: 20}}>
+                    {'Начать звонок'}
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
+          )
+        }
       </SafeAreaView>
-    </>
+    </SafeAreaProvider>
   );
 };
 
