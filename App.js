@@ -6,36 +6,27 @@
  * @flow strict-local
  */
 
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
   View,
   Text,
-  StatusBar,
-} from 'react-native';
+} from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+} from 'react-native/Libraries/NewAppScreen'
 
 import Video from './Video'
 
-const App: () => React$Node = () => {
+function App () {
   const [isCallActive, setIsCallActive] = useState(true)
-
-
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView style={{flex: 1}}>
+      <View style={{flex: 1}}>
         {
           isCallActive ? (
             <Video onHangup={() => setIsCallActive(false)} />
@@ -51,10 +42,10 @@ const App: () => React$Node = () => {
             </View>
           )
         }
-      </SafeAreaView>
+      </View>
     </SafeAreaProvider>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   scrollView: {
@@ -93,6 +84,6 @@ const styles = StyleSheet.create({
     paddingRight: 12,
     textAlign: 'right',
   },
-});
+})
 
-export default App;
+export default App

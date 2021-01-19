@@ -173,9 +173,9 @@ function Video (props) {
     console.log('joinConf', conferenceId)
     let joinConf
     if (IS_IOS)
-      ({ joinConf } = trueconfRef.current)
+      ;({ joinConf } = trueconfRef.current)
     else
-      ({ joinConf } = TrueConfSDK)
+      ;({ joinConf } = TrueConfSDK)
 
     joinConf(conferenceId)
   }
@@ -297,7 +297,7 @@ function Video (props) {
   const server = 'videoconf.mediadoc.fr'
   const userId = '749fda90c2414082a6ece8e9d89fbf4a'
   const userPassword = '223a82395b393b5bfdeb30d189e32bb9'
-  const conferenceId = 'd8fb9528eb7d4c2687dc9c25225702cb'
+  const conferenceId = '2d0829092932453d8064f4da499e9bd4'
 
   useEffect(() => {
     initSdk()
