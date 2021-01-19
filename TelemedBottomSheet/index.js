@@ -8,6 +8,7 @@ import PropTypes from 'prop-types'
 import BottomSheet from 'reanimated-bottom-sheet'
 
 function TelemedBottomSheet (props) {
+  console.log('TelemedBottomSheet', props)
   // const {
   //   isCallActive,
   //   isCallHidden,

@@ -22,6 +22,11 @@
     "react-native-screens": "^2.16.1",
     "reanimated-bottom-sheet": "^1.0.0-alpha.22",
     "react-native-reanimated": "^1.13.2",
+    "react-navigation": "4.4.3",
+    "react-navigation-animated-switch": "^0.6.3",
+    "react-navigation-props-mapper": "^1.0.4",
+    "react-navigation-stack": "^2.10.2",
+    "react-navigation-tabs": "^2.10.1",
     "react-native-trueconf-react-sdk": "kesha-antonov/react-native-trueconf-react-sdk#5cc9bee3b8533ee0a7c6c2235799d2dff009761d",
     "react-native-trueconf-sdk": "file:./TrueConfSDK"
   },

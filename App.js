@@ -13,38 +13,18 @@ import {
   Text,
 } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import TelemedBottomSheet from './TelemedBottomSheet'
+import AppContainer from './nav/AppContainer'
 
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen'
 
-import Video from './Video'
 
 function App () {
-  const [isCallActive, setIsCallActive] = useState(true)
-
   return (
     <SafeAreaProvider>
       <View style={{flex: 1}}>
-        {
-          isCallActive ? (
-            <TelemedBottomSheet
-              renderContent={() => (<Video onHangup={() => setIsCallActive(false)} />)}
-            />
-          ) : (
-            <View style={{flex: 1,justifyContent: 'center', alignItems: 'center'}}>
-              <TouchableOpacity onPress={() => setIsCallActive(true)}>
-                <View style={{padding: 20, backgroundColor: 'green', borderRadius: 10}}>
-                  <Text style={{color: 'white', fontSize: 20}}>
-                    {'Начать звонок'}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-          )
-        }
+        <AppContainer />
       </View>
     </SafeAreaProvider>
   )
