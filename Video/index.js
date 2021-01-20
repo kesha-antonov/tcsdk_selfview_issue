@@ -173,9 +173,9 @@ function Video (props) {
     console.log('joinConf', conferenceId)
     let joinConf
     if (IS_IOS)
-      ;({ joinConf } = trueconfRef.current)
+      ({ joinConf } = trueconfRef.current)
     else
-      ;({ joinConf } = TrueConfSDK)
+      ({ joinConf } = TrueConfSDK)
 
     joinConf(conferenceId)
   }
