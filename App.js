@@ -15,6 +15,7 @@ import {
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { NavigationContainer } from '@react-navigation/native'
 import AppContainer from './nav/AppContainer'
+import TelemedBottomSheet from './TelemedBottomSheet/scene'
 
 import {
   Colors,
@@ -28,6 +29,7 @@ function App () {
         <NavigationContainer>
           <AppContainer />
         </NavigationContainer>
+        <TelemedBottomSheet />
       </View>
     </SafeAreaProvider>
   )

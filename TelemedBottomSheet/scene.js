@@ -9,7 +9,6 @@ import PropTypes from 'prop-types'
 import Video from '../Video'
 import TelemedBottomSheet from './index'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { withMappedNavigationParams } from 'react-navigation-props-mapper'
 
 function Scene () {
   const [isCallActive, setIsCallActive] = useState(true)
@@ -38,4 +37,4 @@ function Scene () {
 }
 
 
-export default withMappedNavigationParams()(Scene)
+export default Scene
