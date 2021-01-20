@@ -13,8 +13,6 @@ import {
   Text,
 } from 'react-native'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
-import { NavigationContainer } from '@react-navigation/native'
-import AppContainer from './nav/AppContainer'
 import TelemedBottomSheet from './TelemedBottomSheet/scene'
 
 import {
@@ -26,9 +24,6 @@ function App () {
   return (
     <SafeAreaProvider>
       <View style={{flex: 1}}>
-        <NavigationContainer>
-          <AppContainer />
-        </NavigationContainer>
         <TelemedBottomSheet />
       </View>
     </SafeAreaProvider>
